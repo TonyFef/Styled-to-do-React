@@ -1,0 +1,132 @@
+html {
+    overflow-x: hidden;
+}
+body {
+    background: #ea5959;
+}
+.common {
+    display: flex;
+    margin: 161px auto;
+    background: #ffffff;
+    height: 700px;
+    max-width: 983px;
+}
+.left {
+    width: 21%;
+    padding-top: 139px;
+    padding-left: 51px;
+}
+.right {
+    /* display: flex; */
+    flex-wrap: wrap;
+    width: 79%;
+}
+.input-left {
+    max-width: 100px;
+}
+.home__title-container {
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 31px;
+    line-height: 37px;
+    margin-top: 30px;
+    margin-left: 53px;
+    margin-bottom: 25px;
+    color: #000000;
+}
+.home__todoform-container {
+    margin-bottom: 32px;
+}
+.my-form__add {
+    width: 678px;
+    height: 47px;
+    margin-left: 53px;
+    background: #f3f3f3;
+}
+.to-do-list {
+    margin-left: 53px;
+}
+.form-span {
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    margin-right: 18px;
+    color: #5a5a5a;
+}
+.card {
+    border: none;
+    max-width: 648px;
+    margin-bottom: 16px;
+}
+.card-body {
+    padding: 0;
+}
+.todo-list__item-container {
+    margin-bottom: 16px;
+}
+.cathegory {
+    height: 24px;
+    background: #ea5959;
+    border-radius: 4px;
+    padding: 5px 20px;
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+
+    color: #ffffff;
+}
+.list-all {
+    display: flex;
+    justify-content: space-between;
+    max-width: 670px;
+}
+.list-left {
+    display: flex;
+    align-items: center;
+}
+.list-delete__button {
+    border: none;
+    background-color: #fff;
+}
+.list-delete__img {
+    width: 14px;
+    height: 17px;
+}
+.choose-cathegory {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.cathegory-item {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 26px;
+    margin-bottom: 24px;
+    color: #525252;
+    cursor: pointer;
+}
+
+input[type='checkbox'] {
+    display: none;
+}
+label:before {
+    content: ' ';
+    display: inline-block;
+    margin-right: 18px;
+    text-align: center;
+    text-indent: 0px;
+    width: 28px;
+    height: 28px;
+    border: 1px solid #ea5959;
+    border-radius: 8px;
+    vertical-align: middle;
+}
+input:checked + label:before {
+    content: url(./checkmark.svg);
+}
