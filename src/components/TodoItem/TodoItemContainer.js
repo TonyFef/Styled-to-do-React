@@ -5,11 +5,13 @@ import { TodoItem } from './TodoItem';
 import { todoItemsState } from '../../state';
 
 export function TodoItemContainer({ item }) {
-    const [_todoItemsState, setTodoItemsState] = useRecoilState(todoItemsState);
+    const [todoItems, setTodoItems] = useRecoilState(todoItemsState);
+
+    // console.log(item);
 
     const toggleItemCheck = () => {
-        setTodoItemsState(
-            getItemsWithUpdateItem(_todoItemsState, {
+        setTodoItems(
+            getItemsWithUpdateItem(todoItems, {
                 ...item,
                 isComplete: !item.isComplete,
             })
@@ -17,8 +19,8 @@ export function TodoItemContainer({ item }) {
     };
 
     const deleteItem = () => {
-        const newList = _todoItemsState.filter((_item) => _item.id !== item.id);
-        setTodoItemsState(newList);
+        const newList = todoItems.filter((_item) => _item.id !== item.id);
+        setTodoItems(newList);
     };
 
     return (
@@ -28,6 +30,7 @@ export function TodoItemContainer({ item }) {
             onToggleCheck={toggleItemCheck}
             onDeleteClick={deleteItem}
             cathegory={item.cathegory}
+            id={item.id}
         />
     );
 }

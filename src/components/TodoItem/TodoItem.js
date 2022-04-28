@@ -1,18 +1,12 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
 import Form from 'react-bootstrap/Form';
-// import Button from 'react-bootstrap/Button';
-// import Col from 'react-bootstrap/Col';
 
 import rubbish from '../../rubbish.svg';
 
 import './TodoItem.css';
 
-let counter = 0;
-
-export function TodoItem({ text, isComplete, onToggleCheck, onDeleteClick, cathegory }) {
-    counter++;
-    const id = 'checkbox-id' + counter;
+export function TodoItem({ text, isComplete, onToggleCheck, onDeleteClick, cathegory, id }) {
 
     return (
         <Card>
@@ -32,21 +26,6 @@ export function TodoItem({ text, isComplete, onToggleCheck, onDeleteClick, cathe
                             </button>
                         </div>
                     </div>
-
-                    {/* <input
-                                type='checkbox'
-                                id='item'
-                                name='item'
-                                className='custom-checkbox'
-                                checked={isComplete}
-                                onChange={(event) => onToggleCheck(event.target.value)}
-                            />
-                            <label htmlFor='item'>{text}</label> */}
-
-                    {/* <Col></Col> */}
-
-                    {/* <Form.Control type='text' value={text} onChange={(event) => onTextUpdate(event.target.value)} /> */}
-                    {/* </Form.Row> */}
                 </Form>
             </Card.Body>
         </Card>

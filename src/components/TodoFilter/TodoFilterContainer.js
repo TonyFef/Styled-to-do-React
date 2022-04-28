@@ -1,15 +1,23 @@
 import React from 'react';
-import { useRecoilState } from 'recoil';
+import { useRecoilState, useRecoilValue } from 'recoil';
 
 import { TodoFilter } from './TodoFilter';
-import { todoItemsFilterState } from '../../state';
+import { todoFilter, todoFliterCategories } from '../../state';
 
 export function TodoFilterContainer() {
-    const [filter, setFilter] = useRecoilState(todoItemsFilterState);
+    const [filter, setFilter] = useRecoilState(todoFilter);
+
+    const categoriesState = useRecoilValue(todoFliterCategories);
 
     const updateFilter = (value) => {
         setFilter(value);
     };
 
-    return <TodoFilter value={filter} changeFilter={updateFilter} />;
+    return (
+        <ul className='choose-cathegory'>
+            {categoriesState.map((item) => {
+                return <TodoFilter value={filter} changeFilter={updateFilter} item={item} />;
+            })}
+        </ul>
+    );
 }

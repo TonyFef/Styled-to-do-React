@@ -1,23 +1,15 @@
 import { selector } from 'recoil';
 
-import { todoItemsState, todoItemsFilterState } from './atoms';
+import { todoItemsState, todoFilter } from './atoms';
 
 export const filteredTodoItemsState = selector({
     key: 'filteredTodoItemsState',
     get: ({ get }) => {
-        const filter = get(todoItemsFilterState);
+        const filter = get(todoFilter);
         const items = get(todoItemsState);
-        switch (filter) {
-            case 'Groceries':
-                return items.filter((item) => item.cathegory === 'Groceries');
-            case 'College':
-                return items.filter((item) => item.cathegory === 'College');
-            case 'Payments':
-                return items.filter((item) => item.cathegory === 'Payments');
-            case 'All':
-            default:
-                return items;
-        }
+
+        if (!filter || filter === 'All') return items;
+        return items.filter((item) => item.cathegory === filter);
     },
 });
 

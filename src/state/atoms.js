@@ -11,7 +11,25 @@ export const todoItemsState = atom({
     ],
 });
 
-export const todoItemsFilterState = atom({
-    key: 'todoItemsFilterState',
+export const todoFilter = atom({
+    key: 'todoFilter',
     default: 'All',
+});
+
+export const todoFliterCategories = atom({
+    key: 'todoFliterCategories',
+    // default: {
+    //     all: 'All',
+    //     uncategorized: 'Uncategorized',
+    //     groceries: 'Groceries',
+    //     payments: 'Payments',
+    //     college: 'College',
+    // },
+    default: [
+        { id: 1, isShow: true, cathegory: 'All' },
+        { id: 2, isShow: true, cathegory: 'Groceries' },
+        { id: 3, isShow: true, cathegory: 'College' },
+        { id: 4, isShow: true, cathegory: 'Payments' },
+        { id: 5, isShow: false, cathegory: 'Uncategorized' },
+    ],
 });
